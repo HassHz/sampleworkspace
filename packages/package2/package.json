@@ -1,0 +1,20 @@
+{
+  "name": "package2",
+  "version": "1.0.0",
+  "description": "random package 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio run wdio.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/browser-runner": "^9.2.8",
+    "@wdio/cli": "^9.2.8",
+    "@wdio/dot-reporter": "9.2.2",
+    "@wdio/mocha-framework": "^9.2.8",
+    "chai": "^5.1.2",
+    "vite-plugin-commonjs": "^0.10.3",
+    "vite-plugin-node-polyfills": "^0.22.0"
+  }
+}
