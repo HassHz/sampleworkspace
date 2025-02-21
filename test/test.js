@@ -53,6 +53,14 @@ describe("Dummy Test", () => {
     }
 
     // May help with reproducing for some reason.
+    await new Promise((res, rej) => {
+      setTimeout(() => {
+        res();
+      }, 5000);
+    });
+  });
+
+  it("Just Passes Again after 5 Seconds", async () => {
     console.log("^^^ Waiting 5 secs");
     await new Promise((res, rej) => {
       setTimeout(() => {
@@ -61,6 +69,4 @@ describe("Dummy Test", () => {
       }, 5000);
     });
   });
-
-  it("Just Passes Again", async () => {});
 });
