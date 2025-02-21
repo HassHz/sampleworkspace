@@ -32,13 +32,13 @@ describe("Dummy Test", () => {
   it("Just Passes", async () => {});
 
   it("Dummy Test", async () => {
-    // Test to reproduce issue where a thrown error (regardless of whether it's caught or not) causes the spec reporter to not display results.
+    // Test to reproduce issue where a thrown error (regardless of whether it's caught or not) causes wdio to stop running.
 
     const url = "https://nonexistent.com/api";
     const data = { key1: "value1", key2: "value2" };
     // Option 1
-    // Sometimes shows summary spec reporter results (with this current test marked as failure).
-    // But most of the time shows an error with no spec reporter results.
+    // Sometimes goes through all the tests and shows summary spec reporter results (with this current test marked as failure).
+    // But most of the time shows an error and stops wdio with no spec reporter results.
     if (option === 1) {
       console.log("OPTION 1 - No Catch");
       await sendPostRequestNoCatch(url, data);
@@ -46,7 +46,7 @@ describe("Dummy Test", () => {
 
     // Option 2
     // Sometimes test passes since error is caught and test ends (and shows spec reporter results).
-    // But most of the time shows an error with no spec reporter results.
+    // But most of the time shows an error and stops wdio with no spec reporter results.
     if (option === 2) {
       console.log("OPTION 2 - Catch");
       await sendPostRequest(url, data);
