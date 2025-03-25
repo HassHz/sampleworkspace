@@ -32,6 +32,9 @@ describe("Dummy Test", () => {
   it("Just Passes", async () => {});
 
   it("Dummy Test", async () => {
+    // This also causes wdio to stop running.
+    // console.error("Error: This is a dummy error");
+
     // Test to reproduce issue where a thrown error (regardless of whether it's caught or not) causes wdio to stop running.
 
     const url = "https://nonexistent.com/api";
